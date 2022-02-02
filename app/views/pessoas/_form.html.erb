@@ -1,0 +1,58 @@
+<%= form_for @pessoa, html: { class: 'form-horizontal' } do |f| %>
+  <%= params[:action].eql?("edit") ? "Editar " : "Nova Pessoa" %>
+  <% if @pessoa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pessoa.errors.count, "error") %> Não foi possivel salvar Pessoa: </h2>
+      <ul>
+        <% @pessoa.errors.full_messages_for(:nome).each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        <% @pessoa.errors.full_messages_for(:email).each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        <% @pessoa.errors.full_messages_for(:cpf).each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        <% @pessoa.errors.full_messages_for(:telefone).each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= f.label :nome, "Nome" %>
+    <%= f.text_field :nome %>
+    <% @pessoa.errors.full_messages_for(:nome).each do |message| %>
+      <div> <%= message  %> </div>
+    <% end %>
+  </div>
+  <br/>
+  <div>
+    <%= f.label :email, "Email" %>
+    <%= f.text_field :email %>
+    <% @pessoa.errors.full_messages_for(:email).each do |message| %>
+      <div> <%= message  %> </div>
+    <% end %>
+  </div>
+  <br/>
+  <div>
+    <%= f.label :cpf, "Cpf" %>
+    <%= f.text_field :cpf %>
+    <% @pessoa.errors.full_messages_for(:cpf).each do |message| %>
+      <div> <%= message  %> </div>
+    <% end %>
+  </div>
+  <br/>
+  <div>
+    <%= f.label :telefone, "Telefone" %>
+    <%= f.text_field :telefone %>
+    <% @pessoa.errors.full_messages_for(:telefone).each do |message| %>
+      <div> <%= message  %> </div>
+    <% end %>
+  </div>
+  <br/>
+  <div>
+    <%= f.submit "Criar", class: "btn btn-primary" %>
+    <%= link_to 'Voltar', pessoas_url, class: "btn btn-secondary" %>
+  </div>
+<% end %>

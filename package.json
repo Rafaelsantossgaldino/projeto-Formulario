@@ -1,0 +1,7 @@
+{
+  "name": "projeto-Formulario",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}

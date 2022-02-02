@@ -1,0 +1,42 @@
+<h1>Lista de Pessoas</h1>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+      <% @pessoas.each do |pessoa| %>
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" 
+                width="100%" height="225" xmlns="http://www.w3.org/2000/svg" 
+                role="img" aria-label="Placeholder: Thumbnail" 
+                preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title><%= pessoa.nome %></title>
+                <rect width="100%" height="100%" fill="#55595c"/>
+                <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                  <%= link_to pessoa.nome, pessoa %>
+                </text>
+              </svg>
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <%= link_to "View", pessoa_path(pessoa), 
+                                class: "btn btn-outline-secondary" %>
+                    <%= link_to "Edit", edit_pessoa_path(pessoa), 
+                                class: "btn btn-outline-secondary" %>
+
+                    <%= link_to "Destroy", pessoa_path(pessoa), 
+                                class: "btn btn-outline-secondary",
+                                method: :delete, 
+                                data: {confirm: "Tem Certeza?"} %>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>  
+  </div>
+  <br/>    
+  <%= link_to 'Nova Pessoa', new_pessoa_path, class: 'btn btn-primary' %>
+</div>

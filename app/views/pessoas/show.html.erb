@@ -1,0 +1,31 @@
+<section>
+  <div class="container">  
+    <div class="row">
+      <div class="col-sm-5 col-md-6 col-12 pb-4 text-dark">
+        <div class="text-dark">
+          <h1 class="text-dark">Pessoa</h1>
+        </div>  
+        <div>
+          <strong>Nome:</strong>
+          <%= @pessoa.nome %>
+        </div>
+        <div>
+          <strong>Email:</strong>
+          <%= @pessoa.email %>
+        </div>
+        <div>
+          <strong>CPF:</strong>
+          <%= @pessoa.cpf %>
+        </div>
+        <div>
+          <strong>Telefone:</strong>
+          <%= @pessoa.telefone %>
+        </div>
+      </div>  
+  </div>
+  <div>
+    <%= link_to "Voltar", root_path, class: "btn btn-primary" %> 
+  </div>    
+</section>
+
+
