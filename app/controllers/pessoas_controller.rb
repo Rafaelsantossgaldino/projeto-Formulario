@@ -1,7 +1,8 @@
 class PessoasController < ApplicationController
 
   def index
-    @pessoas = Pessoa.all
+    @q = Pessoa.ransack(params[:q])
+    @pessoas = @q.result(district: true)
   end
 
   def show

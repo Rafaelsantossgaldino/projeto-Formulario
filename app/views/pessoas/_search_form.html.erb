@@ -1,0 +1,24 @@
+<br/>
+<%= search_form_for @q, html: { class: "pessoa_search" } do |f| %>
+  <div class="row">
+    <div class="col-lg-3">
+      <%= f.label :nome, "NOME:", class: 'text-white' %>
+      <%= f.search_field :nome_cont, class: 'form-control'%>
+    </div>
+
+    <div class="col-lg-3">
+      <%= f.label :cpf, "CPF:", class: 'text-white' %>
+      <%= f.search_field :cpf_cont, class: 'form-control'%>
+    </div>
+
+    <div class="col-lg-3">
+      <%= f.label :email, "EMAIL:", class: 'text-white' %>
+      <%= f.search_field :email_cont, class: 'form-control'%>
+    </div>
+
+  </div>
+  <br/>
+  <div class="col-lg-3">
+    <%= f.submit "Busca Avançada", class: 'btn btn-primary text-white' %>
+  </div>
+<% end %>
