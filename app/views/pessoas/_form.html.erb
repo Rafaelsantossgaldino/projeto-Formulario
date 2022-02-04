@@ -2,8 +2,8 @@
   <%= params[:action].eql?("edit") ? " " : "" %>
   <% if @pessoa.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@pessoa.errors.count, "error") %> Não foi possivel salvar Pessoa: </h2>
-      <ul>
+      <h2 class="text-white"><%= pluralize(@pessoa.errors.count, "error") %> Não foi possivel salvar Pessoa: </h2>
+      <ul class="text-white">
         <% @pessoa.errors.full_messages_for(:nome).each do |message| %>
           <li><%= message %></li>
         <% end %>
@@ -24,7 +24,7 @@
     <%= f.label :nome, "Nome:", class: 'text-white' %>
     <%= f.text_field :nome,  class: "form-control" %>
     <% @pessoa.errors.full_messages_for(:nome).each do |message| %>
-      <div> <%= message  %> </div>
+      <div class="text-white"> <%= message  %> </div>
     <% end %>
   </div>
   <br/>
@@ -32,7 +32,7 @@
     <%= f.label :email, "Email:", class: 'text-white' %>
     <%= f.text_field :email,  class: "form-control" %>
     <% @pessoa.errors.full_messages_for(:email).each do |message| %>
-      <div> <%= message  %> </div>
+      <div class="text-white"> <%= message  %> </div>
     <% end %>
   </div>
   <br/>
@@ -40,7 +40,7 @@
     <%= f.label :cpf, "CPF:", class: 'text-white' %>
     <%= f.text_field :cpf,  class: "form-control" %>
     <% @pessoa.errors.full_messages_for(:cpf).each do |message| %>
-      <div> <%= message  %> </div>
+      <div class="text-white"> <%= message  %> </div>
     <% end %>
   </div>
   <br/>
@@ -48,7 +48,7 @@
     <%= f.label :telefone, "Telefone:", class: 'text-white' %>
     <%= f.text_field :telefone,  class: "form-control"%>
     <% @pessoa.errors.full_messages_for(:telefone).each do |message| %>
-      <div> <%= message  %> </div>
+      <div class="text-white"> <%= message  %> </div>
     <% end %>
   </div>
   <br/>
