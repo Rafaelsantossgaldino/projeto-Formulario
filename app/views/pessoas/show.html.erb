@@ -9,48 +9,35 @@
         </div>
         <br/>
       </div>
-    <div>
-    
-  </div>
-</div>
-
-
-
-
-
-
-<section>
-  <div class="container">  
-    <div class="row">
-      <div class="col-sm-5 col-md-6 col-12 pb-4 text-white">
-        <h1 class="text-white"></h1>
-        <br>  
-        <div>
+      <br>
+      <div class="widget margin-t-md" style="margin-bottom: 15px">
+        <br> 
+        <div class="text-white">
           <strong>Nome:</strong>
           <%= @pessoa.nome %>
         </div>
         <br>
-        <div>
+        <div class="text-white">
           <strong>Email:</strong>
           <%= @pessoa.email %>
         </div>
         <br>
-        <div>
+        <div class="text-white">
           <strong>CPF:</strong>
           <%= @pessoa.cpf %>
         </div>
         <br>
-        <div>
+        <div class="text-white">
           <strong>Telefone:</strong>
           <%= @pessoa.telefone %>
         </div>
         <br>
       </div>
     </div>  
+    <div>
+      <%= link_to "Voltar", root_path, class: "btn btn-primary" %> 
+    </div>    
   </div>
-  <div>
-    <%= link_to "Voltar", root_path, class: "btn btn-primary" %> 
-  </div>    
-</section>
+</div>
 
 
